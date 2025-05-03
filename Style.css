@@ -1,0 +1,351 @@
+/* Global styles */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #16a085;
+    --text-light: #ecf0f1;
+    --text-dark: #34495e;
+    --hover-glow: 0 0 25px rgba(22, 160, 133, 0.8), 0 0 35px rgba(22, 160, 133, 0.6);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    color: var(--text-light);
+    background-image: linear-gradient(5deg, #2c3e50, #0cffcf);
+    padding: 2em;
+    align-items: center;
+    border-bottom: 5px solid rgba(22, 160, 133, 0.5);
+}
+
+header h1 {
+    border: 2px solid rgba(236, 240, 241, 0.7);
+    padding: 0.8em;
+    position: relative;
+    border-radius: 8px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+header h1::before {
+    content: '';
+    position: absolute;
+    border: 11px solid var(--accent-color);
+    bottom: -17px;
+    box-shadow: 0px 0px 13px var(--accent-color), 0 0 30px var(--accent-color);
+    border-radius: 50%;
+    animation: circle 5s cubic-bezier(0, 0.96, 0.7, 0.14) infinite;
+}
+
+@keyframes circle {
+    0%, 100% {
+        bottom: -17px;
+        left: -17px;
+    }
+    25% {
+        bottom: -17px;
+        left: calc(100% - 5px);
+    }
+    50% {
+        bottom: calc(100% - 5px);
+        left: calc(100% - 5px);
+    }
+    75% {
+        bottom: calc(100% - 5px);
+        left: -17px;
+    }
+}
+
+#profile-pic {
+    height: 10.5em;
+    width: 10.5em;
+    border-radius: 50%;
+    position: relative;
+    object-fit: cover;
+    z-index: 1;
+    border: 3px solid var(--text-light);
+}
+
+.profile-container {
+    position: relative;
+    width: 10.5em;
+    height: 10.5em;
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(from 10deg, transparent 60%, #7cffe7);
+    border-radius: 50%;
+    z-index: 0;
+    inset: -8px;
+    animation: rotate 1.3s linear infinite;
+    box-shadow: 0 0 25px var(--accent-color), 0 0 30px rgba(22, 160, 133, 0.7);
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 2em;
+}
+
+main h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5em;
+    font-size: 2.5em;
+    position: relative;
+    padding-bottom: 0.5em;
+}
+
+main h1::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+.hobbies {
+    display: flex;
+    color: var(--text-dark);
+    border: none;
+    background-color: transparent;
+    padding: 1em;
+    gap: 3em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hobbies img {
+    height: 23em;
+    width: 17em;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hobbies img:hover {
+    transform: scale(1.03);
+}
+
+#exercise, #writing, #anime {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 15px;
+    padding: 2em;
+    background: #ffffff;
+    height: 10em;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    transform: skew(5deg, 2deg);
+    transition: all 0.4s ease-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(22, 160, 133, 0.2);
+}
+
+#exercise:hover, #writing:hover, #anime:hover {
+    transform: none;
+    box-shadow: var(--hover-glow);
+    height: 38em;
+}
+
+.hobbies p {
+    width: 18em;
+    margin: 18px;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 0.95em;
+}
+
+.hobbies h2 {
+    display: flex;
+    color: var(--primary-color);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+
+.skills {
+    margin: 4em auto;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    height: 24em;
+    color: var(--text-light);
+    width: 24em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.skills h2 {
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.skill-container {
+    position: absolute;
+    animation: spin 6s infinite linear;
+    width: 20em;
+    height: 20em;
+}
+
+.skill-container div img {
+    animation: counter-spin 25s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes counter-spin {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.skills img {
+    height: 2em;
+}
+
+#C, #CPP, #JS, #Git, #GitHub, #Python {
+    height: 3.2em;
+    border-radius: 50%;
+    width: 3.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+#C:hover, #CPP:hover, #JS:hover, #Git:hover, #GitHub:hover, #Python:hover {
+    transform: scale(1.1);
+}
+
+#C {
+    position: relative;
+    left: 16em;
+    top: 2em;
+    box-shadow: 0 0 15px rgba(59, 89, 152, 0.8);
+}
+
+#CPP {
+    position: relative;
+    top: 6em;
+    left: 18em;
+    box-shadow: 0 0 15px rgba(21, 112, 216, 0.8)
+}
+
+#JS {
+    position: relative;
+    left: 13em;
+    top: 11em;
+    box-shadow: 0 0 15px rgba(247, 223, 30, 0.8)
+}
+
+#Git {
+    position: relative;
+    left: 3em;
+    top: 7em;
+    box-shadow: 0 0 15px rgba(243, 79, 41, 0.8);
+}
+
+#GitHub {
+    position: relative;
+    left: -1em;
+    bottom: 4em;
+    box-shadow: 0 0 15px rgba(36, 41, 46, 0.8);
+}
+
+#Python {
+    position: relative;
+    left: 6em;
+    top: -17em;
+    box-shadow: 0 0 15px rgba(55, 118, 171, 0.8);
+}
+
+
+footer {
+    background-color: var(--primary-color);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-light);
+    text-align: center;
+}
+
+footer h2 {
+    margin: 0.5em 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+footer h2:last-child {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+    .hobbies {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skills {
+        left: 19%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 2em;
+    }
+    
+    .skills {
+        height: 20em;
+        width: 20em;
+    }
+    
+    #exercise, #writing, #anime {
+        transform: none;
+    }
+}
