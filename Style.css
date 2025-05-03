@@ -343,6 +343,7 @@ footer h2:last-child {
     .skills {
         height: 20em;
         width: 20em;
+        left: 11em;
     }
     
     #exercise, #writing, #anime {
