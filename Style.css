@@ -43,7 +43,7 @@ header h1::before {
     bottom: -17px;
     box-shadow: 0px 0px 13px var(--accent-color), 0 0 30px var(--accent-color);
     border-radius: 50%;
-    animation: circle 5s cubic-bezier(0, 0.96, 0.7, 0.14) infinite;
+    animation: circle 5s cubic-bezier(0, 1.02, 0.58, 1) infinite;
 }
 
 @keyframes circle {
